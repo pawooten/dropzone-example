@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+        <style type="text/css">
+            form {
+                height:200px;
+                border:1px solid black;
+            }
+        </style>
+        <script type="text/javascript">
+            // Not applying the dropzone css class to the form because I'm using imperative mode.
+            $(function() {
+                const dropzoneConfig = {
+                    url: "/file/post",
+                    autoProcessQueue: false,
+                    dictDefaultMessage: 'Upload attachments',
+                };
+
+                $('<form id="dropzoneForm" class="dropzone"></form>').appendTo('body');
+                let myDropzone = new Dropzone("#dropzoneForm", dropzoneConfig);
+            })
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
